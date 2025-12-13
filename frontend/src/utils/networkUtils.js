@@ -13,7 +13,7 @@ export const checkServerReachable = async (url) => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
     
-    const response = await fetch(import.meta.VITE_API_URL + url, { 
+    const response = await fetch('https://reelscheduler-backend-2.onrender.com/api' + url, { 
       method: 'GET',
       signal: controller.signal,
       // Cache: 'no-store' ensures we're not getting a cached response
